@@ -16,7 +16,7 @@ function initializeScripts(){
     e.preventDefault();
 
     $.ajax({
-        url: "https://formspree.io/r.levyts@gmail.com",
+        url: "https://formspree.io/carlawlondon@gmail.com",
         method: "POST",
         data: $('.email_me').serialize(),
         dataType: "json"
@@ -95,7 +95,7 @@ function initializeScripts(){
   window.ga('set', 'page', window.location.pathname);
   window.ga('send', 'pageview');
   
-  if(urlString === 'http://localhost:4000/' || urlString === 'https://levytsroman.github.io/'){
+  if(urlString === 'http://localhost:4000/' || urlString === 'https://carlashub.github.io/'){
     Barba.Pjax.getTransition = function() {
       return HideShowTransition;
     };

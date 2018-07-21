@@ -181,7 +181,7 @@ var FadeTransition = Barba.BaseTransition.extend({
       initializeScripts();
       if (
         this.newContainer.baseURI === "http://localhost:4000/" ||
-        this.newContainer.baseURI === "https://levytsroman.github.io/"
+        this.newContainer.baseURI === "https://carlashub.github.io/"
       ) {
         $(this.newContainer).addClass("barba-new-container-back");
         $(".my-borders").css({
