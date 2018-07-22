@@ -15,11 +15,11 @@
 # in the templates via {{ site.myvariable }}.
 title: Carla Goncalves
 email: "carlawlondon@gmail.com"
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: " /carlashub.github.io/" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 linked_in_link: ""
 twitter_username: ""
-github_link: "https://carlashub.github.io"
+github_link: "https://carlashub.github.io/"
 
 select_options: clear-filters HTML5 CSS3 SCSS javaScript jQuery materialize charts.js React jekyll Ruby-on-Rails Sinatra front-end back-end finished current
 sass:
