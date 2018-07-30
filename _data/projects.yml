@@ -37,6 +37,26 @@
     '/assets/images/project_images/missdazz/missdazz3.png'
   ]
 
+
+- id: 4
+  title: CMS project php
+  url: https://ide.c9.io/carlagoncalves/cms_project
+  description: Content Management System coded in php with CRUD funtionalities and admin panel
+  technologies: [
+                  html5-plain,
+                  css3-plain-wordmark,
+                  javascript-plain,
+                  bootstrap-plain,
+                  mysql-original,
+                  Wordpress-plain,
+                  php-plain
+                 
+                ]
+  cover: /assets/images/project_images/cms_project.png
+  images: [
+    '/assets/images/project_images/admin_panel.png',
+    '/assets/images/project_images/admin_panel.png'
+  ]
 #- id: 4
 #  title: MissDazz
 # url: https://levytsroman.github.io/shootThingsGame/
