@@ -10,11 +10,12 @@
       skill_name: Bootstrap
     - class: jquery-plain
       skill_name: jQuery
-    - class: jquery-plain
-      skill_name: jQuery
+  
 
 - name: languages
   skills:
+    - class: Csharp-plain
+      skill_name: C#
     - class: javascript-plain
       skill_name: JavaScript
     - class: php-plain
@@ -38,6 +39,8 @@
 
 - name: backend frameworks
   skills:
+    - class: laravel-original
+      skill_name: Laravel
     - class: express-original
       skill_name: Express
     - class: nodejs-plain
