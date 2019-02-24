@@ -14,7 +14,7 @@
 
 - name: languages
   skills:
-    - class: Csharp-plain
+    - class: csharp-plain
       skill_name: C#
     - class: javascript-plain
       skill_name: JavaScript
@@ -39,7 +39,7 @@
 
 - name: backend frameworks
   skills:
-    - class: laravel-original
+    - class: laravel-plain
       skill_name: Laravel
     - class: express-original
       skill_name: Express

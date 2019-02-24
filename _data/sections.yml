@@ -10,10 +10,10 @@ about:
   words: Hi, It's Carla here:)
   class: m5 about
   border: about
-resume:
-  url: /resume
-  heading: Resume
-  words: Check out or download my resume
+blog:
+  url: /blog
+  heading: Blog(ish)
+  words: Sort of blog/repo
   class: m6 algorithms
   border: algorithms
 contact:
