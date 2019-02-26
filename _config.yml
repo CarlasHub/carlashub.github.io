@@ -26,7 +26,14 @@ sass:
   sass_dir: assets/css/main.css
   style: :nested
 
+
 # Build settings
+permalink: pretty
+markdown: kramdown
+plugins_dir:
+  - jekyll-feed
+  - jekyll-autoprefixer
+
 
 markdown: kramdown
 # !github-pages! mandatory › https://help.github.com/articles/using-jekyll-with-pages/#configuration-settings-you-cannot-change

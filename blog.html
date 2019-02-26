@@ -2,17 +2,47 @@
 layout: not_homepage
 quote: If you call failures experiments, you can put them in your resume and claim them as achievements.
 author: Mason Cooley
+custom_css: twitter-bootstrap
 ---
-
-{% include quote.html quote=page.quote author=page.author %}
+<!-- {% include quote.html quote=page.quote author=page.author %} -->
 
 <div class="row resume-wrapper">
-  <h1> Under Construction</h1>
-  <!-- <a href="./assets/carlaCV.pdf" title="click to open in pdf viewer" target="_blank">
+  <!-- <h1> Under Construction</h1>
+  <a href="./assets/carlaCV.pdf" title="click to open in pdf viewer" target="_blank">
     <img src="./assets/images/cv.png" alt="" class="responsive-img resume-img z-depth-2 hoverable">
     <button class="fill col s8 offset-s2 m4 offset-m4">open as pdf</button>
-  </a> -->
-  <div >
-    <iframe src="https://giphy.com/embed/5xtDaroj5KKabUw93Da" width="100%" height="100%" 
-     frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
-</div> 
+  </a>
+   -->
+   <h1 style="color:yellowgreen;"> <em>This beauty is under construction  - coming as soon as its owner have time to develop</em></h1>
+ 
+        {% for post in site.posts offset:0 limit: 1 %}
+  
+         <div class="blog-index-header-main" style="background: {{post.featImage }} ">
+           
+           <div class="overlay-blog"></div>
+           <div class="blog-index-title text-white" >
+             <h1 class="featured-blog-post-title">{{ post.title }}</h1><br>
+             <a href="{{ 'post.url" | relative_url }}" class="read-featured-blog-post">Read more</a>
+           </div>
+         </div>
+       {% endfor %}
+       <div class="container py-5 bg-faded">
+          <div class="card-columns">
+       <div class="blogIndexWrapper">
+         {% for post in site.posts %}
+         <div class="card">
+            <img class="card-img-top img-fluid" src="{{post.featImage }}" alt="Card image cap">
+            <div class="blogPostContainer">
+                <a href="{{post.url}}" class="blogPostFeaturedImg" style="background-image: url('{{site.baseurl}}{{post.featImage }}');"></a>
+                <a href="" class="blogCategory">{{post.categories}}</a>
+                <a href="{{ 'post.url" | relative_url }}" class="blogTitle">{{post.title}}</a>
+                <p class="blogExcerpt">{{post.excerpt}}</p>
+              </div>
+          </div>
+         {% endfor %}
+        </div>
+      </div>
+     </div>
+      <!-- end -->
+   </div>
+
