@@ -13,7 +13,6 @@ custom_css: twitter-bootstrap
     <button class="fill col s8 offset-s2 m4 offset-m4">open as pdf</button>
   </a>
    -->
-   <h1 style="color:yellowgreen;"> <em>This beauty is under construction  - coming as soon as its owner have time to develop</em></h1>
  
         {% for post in site.posts offset:0 limit: 1 %}
   
@@ -22,7 +21,7 @@ custom_css: twitter-bootstrap
            <div class="overlay-blog"></div>
            <div class="blog-index-title text-white" >
              <h1 class="featured-blog-post-title">{{ post.title }}</h1><br>
-             <a href="{{ 'post.url" | relative_url }}" class="read-featured-blog-post">Read more</a>
+             <a href="{{ 'post.url"}}" class="read-featured-blog-post">Read more</a>
            </div>
          </div>
        {% endfor %}
@@ -35,7 +34,7 @@ custom_css: twitter-bootstrap
             <div class="blogPostContainer">
                 <a href="{{post.url}}" class="blogPostFeaturedImg" style="background-image: url('{{site.baseurl}}{{post.featImage }}');"></a>
                 <a href="" class="blogCategory">{{post.categories}}</a>
-                <a href="{{'post.url" | relative_url }}" class="blogTitle">{{post.title}}</a>
+                <a href="{{post.url}}" class="blogTitle">{{post.title}}</a>
                 <p class="blogExcerpt">{{post.excerpt}}</p>
               </div>
           </div>
