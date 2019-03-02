@@ -45,8 +45,12 @@ div.row.resume-wrapper {
 	color: $subtext;
 	text-align: center;
 	font-weight: 900;
+	padding-top: 30px;
+	padding-left: 8px;
+	padding-right: 8px;
 }
 .authorCard{
+	text-align: center;
 	img{
 		height: auto;
 		border-radius: 100%;
@@ -60,8 +64,11 @@ div.row.resume-wrapper {
 .blogPostContentWrapper p{
 
 	color: white;
-    font-size: 26px;
-    line-height: 4rem;
+    font-size: 23px;
+	line-height: 4rem;
+	line-height: 2.5rem;
+    padding-left: 20px;
+    opacity: 0.7;
 }
 .blogReadMoreWrapper .blogPostContainer .blogTitle{
 	color: $subtext;
