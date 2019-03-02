@@ -1,30 +1,49 @@
 ---
 layout: not_homepage
 ---
-<header class="blog-index-header-main" style="background-image: url('{{ site.baseurl }}/assets/images/blog/whichframework.jpg');">
+<header class="container-fluid" style="background-image: url('{{ site.baseurl }}/assets/images/blog/whichframework.jpg');">
 
 <div class="overlay-dark"></div>
+
 <div class="blog-index-title">
-	<h1 class="featured-blog-post-title">{{ page.title }}</h1>
+
+	<h1 class="featured-blog-post-title heading">{{ page.title }}</h1>
+
 </div>
+
 <div class="authorCard">
-	<img src="{{relative_url }}/assets/images/profilepic.jpg">
-    <small><em>by <a href="">{{ site.data.author[page.author].name }}</a><br>on {{ page.date | date: "%B %e, %Y" }}</em></small>
+
+	<img src="{{relative_url }}/assets/images/profilepic.jpg" class="">
+
+	<small><em>by <a href="">{{ site.data.author[page.author].name }}</a><br>on {{ page.date | date: "%B %e, %Y" }}</em></small>
+	
 </div>
+
 </header>
+
+
+
 <div class="blogPostContentWrapper">
 	{{ content }}
 </div>
+
 <hr>
-<h5 class="readMoreCTA">You might want to read... </h5>
+
+<h5 class="readMoreCTA heading">You might want to read... </h5>
+
 <div class="blogReadMoreWrapper">
+
 	{% for post in site.posts limit: 3 %}
+
 		<div class="blogPostContainer">
-			<a href="{{post.url}}" class="blogPostFeaturedImg" style="background-image: url('{{site.baseurl}}{{post.featImage }}');"></a>
+			<!-- <a href="{{post.url}}" class="blogPostFeaturedImg" style="background-image: url('{{site.baseurl}}{{post.featImage }}');"></a> -->
 			<a href="" class="blogCategory">{{post.categories}}</a>
+
 			<a href="{{post.url}}" class="blogTitle">{{post.title}}</a>
-			<p class="blogExcerpt">{{post.excerpt}}</p>
+
+			<p class="blogExcerpt">{{post.excerpt}}...</p>
 		</div>
+
 	{% endfor %}
 	
 </div>

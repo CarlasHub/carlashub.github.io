@@ -13,35 +13,21 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Carla Goncalves
-email: "carlawlondon@gmail.com"
+title: Carla's Hub
+email: carlawlondon@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+  "Carla’s Hub | Personal page and portfolio"
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-linked_in_link: ""
-twitter_username: ""
-github_link: "https://carlashub.github.io/"
-branches:
-  only:
-    - gh-pages
+url: "https://carlashub.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  CarlasHub
+pathToBlogImagesBin: /assets/images/blog/
 
-select_options: clear-filters HTML5 CSS3 SCSS javaScript jQuery materialize charts.js React jekyll Ruby-on-Rails Sinatra front-end back-end finished current
-sass:
-  sass_dir: assets/css/main.css
-  style: :nested
+twitter_path: https://twitter.com/justGosthing
 
 
 # Build settings
 permalink: pretty
 markdown: kramdown
-plugins_dir:
-  - jekyll-feed
-  - jekyll-autoprefixer
-
-
-markdown: kramdown
-# !github-pages! mandatory › https://help.github.com/articles/using-jekyll-with-pages/#configuration-settings-you-cannot-change
-# Since Jekyll 3 the default highlighter is Rouge (replaced Pygments.rb in v44)
-highlighter: rouge
 
 # More › http://kramdown.gettalong.org/quickref.html
 # Options › http://kramdown.gettalong.org/options.html
@@ -61,12 +47,27 @@ kramdown:
     block:
       line_numbers: true
       start_line: 1
-
-
-
-
-gems:
+      
+plugins:
   - jekyll-feed
-exclude:
-  - Gemfile
-  - Gemfile.lock
+  - jekyll-autoprefixer
+
+sass:
+  sass_dir: _sass
+  
+collections:
+  casestudies: 
+    output: true
+
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
