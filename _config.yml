@@ -15,11 +15,14 @@
 # in the templates via {{ site.myvariable }}.
 title: Carla Goncalves
 email: "carlawlondon@gmail.com"
-baseurl: " /carlashub.github.io/" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 linked_in_link: ""
 twitter_username: ""
 github_link: "https://carlashub.github.io/"
+branches:
+  only:
+    - gh-pages
 
 select_options: clear-filters HTML5 CSS3 SCSS javaScript jQuery materialize charts.js React jekyll Ruby-on-Rails Sinatra front-end back-end finished current
 sass:
@@ -58,6 +61,8 @@ kramdown:
     block:
       line_numbers: true
       start_line: 1
+
+
 
 
 gems:
