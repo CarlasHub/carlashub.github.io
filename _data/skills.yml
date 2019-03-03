@@ -45,7 +45,15 @@
       skill_name: Express
     - class: nodejs-plain
       skill_name: NodeJS
+
+- name: cms
+  skills:
+    - class: wordpress-plain
+      skill_name: WordPress
+  
+  
    
+
 
 - name: devops
   skills:
