@@ -1,7 +1,7 @@
 ---
 layout: not_homepage
 ---
-<header class="container-fluid" style="background-image: url('{{ site.baseurl }}/assets/images/blog/whichframework.jpg');">
+<header class="container-fluid post-header" style="background-image: url('{{relative_url }}{{page.header}}');">
 
 <div class="overlay-dark"></div>
 
@@ -23,9 +23,20 @@ layout: not_homepage
 
 
 
-<div class="blogPostContentWrapper">
-	{{ content }}
+<div class="blogPostContentWrapper container">
+	<div class="row">
+			{% for post in site.posts limit: 3 %}
+			<div class="center keywords">
+				<small>{{post.keywords}}</small>
+			</div>
+			{% endfor %}
+		{{ content }}
+	</div>
 </div>
+
+
+
+
 
 <hr>
 
@@ -43,6 +54,7 @@ layout: not_homepage
 
 			<p class="blogExcerpt">{{post.excerpt}}...</p>
 		</div>
+		
 
 	{% endfor %}
 	
