@@ -50,18 +50,18 @@
   skills:
     - class: wordpress-plain
       skill_name: WordPress
-  
-  
-   
-
 
 - name: devops
   skills:
     - class: git-plain
       skill_name: Git
+    - class: bitbucket-plain
+      skill_name: Bitbucket
     - class: github-plain
       skill_name: GitHub
     - class: heroku-original
       skill_name: Heroku
+    - class: laravel-plain
+      skill_name: Forge
 
    
