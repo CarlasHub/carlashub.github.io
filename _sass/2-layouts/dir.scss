@@ -20,6 +20,10 @@
 .my_footer {
   background-color: $dark-grey;
   margin-top: 40px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+
 }
 
 .resume-wrapper {

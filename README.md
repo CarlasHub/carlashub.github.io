@@ -6,3 +6,5 @@ My personal page and portfolio
 
 
 carlawlondon@gmail.com 
+
+#Run bundle exec jekyll serve -- watch --baseurl ""
