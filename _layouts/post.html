@@ -25,11 +25,9 @@ layout: not_homepage
 
 <div class="blogPostContentWrapper container">
 	<div class="row">
-			{% for post in site.posts limit: 3 %}
 			<div class="center keywords">
-				<small>{{post.keywords}}</small>
+				<small>{{page.keywords}}</small>
 			</div>
-			{% endfor %}
 		{{ content }}
 	</div>
 </div>

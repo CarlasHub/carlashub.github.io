@@ -1,20 +1,22 @@
 ---
 layout: not_homepage
+quote: In a world in which the total of human knowledge is doubling about every ten years, our security can rest only on our ability to learn.
+author: Nathaniel Branden
 ---
-<!-- {% include quote.html quote=page.quote author=page.author %}  -->
+{% include quote.html quote=page.quote author=page.author %} 
 
 <div class="row resume-wrapper">
 
  
         {% for post in site.posts offset:0 limit: 1 %}
   
-         <div class="blog-index-header-main" style="background: {{post.featImage }} ">
-  
-            <div class="blog-index-title text-white" >
+         <!-- <div class="blog-index-header-main" style="">
+          <img   class="responsive-img" src="{{site.baseurl}}/assets/images/blog/glasses.jpeg" alt="">
+             <div class="blog-index-title text-white" >
               <h1 class="featured-blog-post-title">{{ post.title }}</h1><br>
-              <a href="{{ 'post.url'}}" class="read-featured-blog-post">Read more</a>
+              <a href="{{ 'post.url'}}" class="read-featured-blog-post">Read more</a> 
             </div>
-         </div>
+         </div>  -->
 
        {% endfor %}
        <div class="container py-5 bg-faded">

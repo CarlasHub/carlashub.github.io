@@ -4,8 +4,9 @@
   github_url: https://github.com/CarlasHub/Beachyo_app
   description: This is a NODEjs/ express app with CRUD functionality uses a callback functions whose parameters are request and response objects. Stores and retrieves JSON data using MongoDB, a NOSQL database hook up in a sandbox database on mLab, free cloud-hosted "sandbox" database. Data sent through HTTP requests
   technologies: [
-                  NODEjs-plain,
-                  css3-plain-wordmark
+                  nodejs-plain,
+                  javascript-plain,
+                  css3-plain-wordmark,
                   javascript-plain,
                   express-plain,
                   heroku-original
@@ -16,8 +17,27 @@
     '/assets/images/project_images/node/app3.png',
     '/assets/images/project_images/node/app4.png'
   ]
+  
+- id: 7
+  title: Archive & Thrive
+  url: https://carlashub.github.io/blog/
+  description: <strong><em>Archive and thrive</em></strong> will be a full user friendly app with features to help with goal achievement and self-development aims[in development] Read the blog for the building journey
+  technologies: [
+                  html5-plain,
+                  css3-plain-wordmark,
+                  javascript-plain,
+                  nodejs-plain,
+                  typescript-plain,
+                  vuejs-plain
+                ]
+  cover: /assets/images/blog/archiveapp/jounalMobile.jpg
+  images: [
+    '/assets/images/blog/archiveapp/journalDesktop.jpg',
+    '/assets/images/blog/archiveapp/jounalMobile.jpg',
+    '/assets/images/blog/archiveapp/jounalMobile2.jpg'
+  ]
 
-- id: 3
+- id: 4
   title: Ecommerce Store MissDazz.com (still in development)
   url: https://missdazz.com
   description: Ecommerce solution built with  a Woocommerce plugin. A project that allowed me to learn not only the more intersting aspects of Wordpress ecosystem and mysql but also important marketing concepts 
@@ -36,9 +56,35 @@
     '/assets/images/project_covers/missdazz.png',
     '/assets/images/project_images/missdazz/missdazz3.png'
   ]
+  
 
 
-- id: 4
+
+- id: 5
+  title: AJAX Random User Generator - UI Card
+  url: https://carlashub.github.io/random_user_generator_ajax/
+  github_url: https://github.com/CarlasHub/random_user_generator_ajax/
+  description: Little exercise that  displays a random user profile through HTTP requests with some UI elements added.  
+  technologies: [
+                  AJAX,
+                  Sass,
+                  javascript-plain,
+                  Bootstrap,
+                  GitHub
+                ]
+  cover: /assets/images/project_covers/randomUserGenerator.png
+  images: [
+    '/assets/images/project_covers/randomUserGenerator.png',
+    '/assets/images/project_images/userrandom.png',
+    '/assets/images/project_images/node/app4.png'
+]
+
+ 
+
+
+
+
+- id: 6
   title: CMS project php
   url: https://ide.c9.io/carlagoncalves/cms_project
   description: Content Management System coded in php with CRUD funtionalities and admin panel
@@ -57,17 +103,4 @@
     '/assets/images/project_images/admin_panel.png',
     '/assets/images/project_images/admin_panel.png'
   ]
-#- id: 4
-#  title: MissDazz
-# url: https://levytsroman.github.io/shootThingsGame/
-#  github_url: https://github.com/LevytsRoman/shootThingsGame
-#  description: A small javaScript browser game, featuring a red plane (player) and an unhealthy onslaught of enemy planes flying over a pictureque rendering of my favorite planet (Earth) in MS Paint.
-#  technologies: [
- #                 html5-plain,
- #                 css3-plain-wordmark,
- #                 javascript-plain
- #               ]
- # cover: /assets/images/project_covers/shoot-things-game-cover.png
-#  images: [
-#    '/assets/images/project_covers/shoot-things-game-cover.png'
-#  ]
+

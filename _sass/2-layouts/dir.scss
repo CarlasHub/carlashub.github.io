@@ -250,6 +250,7 @@ i.material-icons.prefix {
   .project_icons {
     margin-top: 20px;
     font-size: 1.3em;
+    color: $subtext;
   }
 
   h4 {
@@ -336,7 +337,10 @@ button {
 button:focus {
   background-color: transparent;
 }
-
+.btn-cover{
+  color: black;
+  border: solid 2px black;
+}
 button.fill:hover {
   background-color: transparent;
   color: $cover-color;
@@ -375,7 +379,7 @@ button.fill:hover:before {
 }
 
 .cover {
-  background-color: #161738;
+  background-color: $subtext;
   width: 40%;
   height: 100%;
   margin: 0;
