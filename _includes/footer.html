@@ -13,6 +13,28 @@
                   <li><a class="grey-text text-lighten-3" target="_blank" href="https://github.com/CarlasHub"><i class="fa fa-github-square footer_icons" aria-hidden="true"></i><span class="footer_link_text"> github</span></a></li>
                   <li><a class="grey-text text-lighten-3" target="_blank" href="https://www.linkedin.com/in/carla-goncalves-9a01a5164/"><i class="fa fa-linkedin-square footer_icons" aria-hidden="true"></i><span class="footer_link_text"> linkedIn</span></a></li>
                 </ul>
+
+                                                      <!--
+                        PeoplePerHour Profile Widget
+                        The div#pph-hire me is the element
+                        where the iframe will be inserted.
+                        You may move this element wherever
+                        you need to display the widget
+                    -->
+                    <div id="pph-hireme"></div>
+                    <script type="text/javascript">
+                    (function(d, s) {
+                        var useSSL = 'https:' == document.location.protocol;
+                        var js, where = d.getElementsByTagName(s)[0],
+                        js = d.createElement(s);
+                        js.src = (useSSL ? 'https:' : 'http:') +  '//www.peopleperhour.com/hire/3450604477/2725896.js?width=300&height=135&orientation=vertical&theme=dark&rnd='+parseInt(Math.random()*10000, 10);
+                        try { where.parentNode.insertBefore(js, where); } catch (e) { if (typeof console !== 'undefined' && console.log && e.stack) { console.log(e.stack); } }
+                    }(document, 'script'));
+                    </script>
+
+
+
+
               </div>
             </div>
           </div>
