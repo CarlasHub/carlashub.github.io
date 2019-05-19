@@ -1,3 +1,31 @@
+
+
+- id: 1
+  title: Party Theme
+  url: http://candy.x10host.com/
+  github_url: https://github.com/CarlasHub/wordpress-themes
+  description: This is a staging demo for a Woocommerce/Wordpress site  provided  for testing purposes. The theme was developed for myself from the scatch using the  client designs. Very little plugins and easy for the client to make any changes directly via Advance Custom Fields plugin. 
+  technologies: [
+                  wordpress-plain,
+                  php-plain,
+                  javascript-plain,
+                  css3-plain-wordmark,
+                  bootstrap-plain,
+                  express-plain,
+                  jquery-plain
+                ]
+  cover: /assets/images/project_covers/party.png
+ 
+  videos: [
+    'https://player.vimeo.com/video/337131403?autoplay=1',
+
+  ]
+
+  
+
+
+
+
 - id: 2
   title: BeachYO App
   url: https://guarded-escarpment-10701.herokuapp.com/
@@ -17,6 +45,7 @@
     '/assets/images/project_images/node/app3.png',
     '/assets/images/project_images/node/app4.png'
   ]
+
   
 - id: 7
   title: Archive & Thrive
