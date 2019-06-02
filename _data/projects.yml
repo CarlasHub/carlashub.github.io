@@ -1,6 +1,27 @@
 
-
 - id: 1
+  title: Gardens Makeover 
+  url: https://gardensmakeover.com/
+  github_url: https://gardensmakeover.com/
+  description:  This project was requested by a gardening company in London that wanted to replace an outdated html page for a full functional wordpress and woocommerce website. The most challenging part was the creation of various widgets to different layouts.  The site has also a blog and shop which is at this time deactivated duo to client request. Fully responsive.
+  technologies: [
+                  wordpress-plain,
+                  php-plain,
+                  javascript-plain,
+                  css3-plain-wordmark,
+                  bootstrap-plain,
+                  jquery-plain
+                ]
+  cover: '/assets/images/project_images/gardensmakeover/gardensmakeover1.png'
+ 
+  images: [
+    '/assets/images/project_images/gardensmakeover/gardensmakeover.png',
+     '/assets/images/project_images/gardensmakeover/gardensmakeover2.png'
+
+  ]
+
+
+- id: 2
   title: Party Theme
   url: http://candy.x10host.com/
   github_url: https://github.com/CarlasHub/wordpress-themes
@@ -26,7 +47,7 @@
 
 
 
-- id: 2
+- id: 3
   title: BeachYO App
   url: https://guarded-escarpment-10701.herokuapp.com/
   github_url: https://github.com/CarlasHub/Beachyo_app
