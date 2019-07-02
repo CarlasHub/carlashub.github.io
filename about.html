@@ -37,5 +37,32 @@ author: Henry Ford
           </div>
         </div>
       {% endfor %}
+
+
+     
+
+        <div class="blogReadMoreWrapper text-center">
+
+          <h5 class="readMoreCTA heading">You might want to read... </h5>
+
+          {% for post in site.posts limit: 3 %}
+
+            <div class="blogPostContainer">
+              <!-- <a href="{{post.url}}" class="blogPostFeaturedImg" style="background-image: url('{{site.baseurl}}{{post.featImage }}');"></a> -->
+              <a href="" class="blogCategory">{{post.categories}}</a>
+
+              <a href="{{post.url}}" class="blogTitle">{{post.title}}</a>
+
+              <p class="blogExcerpt">{{post.excerpt}}...</p>
+            </div>
+            
+
+          {% endfor %}
+          
+        </div>
+
+<!-- end skills wrapper -->
   </div>
 </div>
+
+
