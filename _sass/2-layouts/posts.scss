@@ -4,6 +4,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     border: solid rgb(178, 36, 239) 3px;
+    border-radius: 15px;
 
       
       .wrapper{
@@ -51,6 +52,10 @@
             position: relative;
             bottom: -5%;
           }
+          #contact {
+            max-width: 100%;
+            min-width: 100%;
+          }
            
         }
       p{
@@ -82,7 +87,7 @@
           margin: auto;
           background:transparent;
           padding:25px;
-          border: solid  2px black;
+          border: solid  2px #5018d0;
           border-radius: 5px;
           position: absolute;
           top:50%;
@@ -90,31 +95,33 @@
           transform: translate(-50%, -50%);
           z-index:999;
           box-shadow: 0 10px 15px rgba(0,0,0,0.5);
-            transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);;
+          transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);;
       
         }
         ::-webkit-input-placeholder { /* Edge */
-        color: black;
+        color: #5018d0
       }
       
       :-ms-input-placeholder { /* Internet Explorer 10-11 */
-        color: black;
+        color: #5018d0;
       }
       
       ::placeholder {
-        color: black;
+        color: #5018d0;
       }
       
         #contact h3 {
             display: block;
             font-size: 30px;
             font-weight: 900;
+            color: #5018d0;
         }
         
         #contact h4 {
             margin:5px 0 15px;
             display:block;
             font-size:13px;
+            color: #5018d0;
             
         }
         
@@ -139,7 +146,7 @@
       }
         #contact input, #contact textarea {
             width:100%;
-            border: solid black 1px;
+            border: solid #5018d0 1px;
             background: transparent;
             margin:0 0 5px;
             padding:10px;
@@ -153,8 +160,8 @@
         }
         
         #contact textarea {
-            height:100px;
-            max-width:100%;
+          height:100px;
+          width:100%;
           resize:none;
           
         }
@@ -168,7 +175,8 @@
             margin: auto;
             padding: 15px;
             font-size:15px;
-            background: black;
+            background: #5018d0;
+            border: none!important;
       
         }
         
@@ -206,11 +214,11 @@
       
        button.btn-quote{
         position: relative;
-        bottom: 10%;
+        bottom: 0;
         left: 50%;
         transform: translatex(-50%);
         background:  rgb(178, 36, 239);
-        padding:10px  30px;
+        padding: 2px  30px;
         border: 1px transparent!important;
         cursor: pointer;
         &:hover{

@@ -403,3 +403,38 @@ var FadeTransition = Barba.BaseTransition.extend({
     });
   }
 });
+
+
+
+$('.overlay').hide();
+
+// setTimeout(function(){
+//     $('.overlay').show();
+ 
+// }, 8000);
+
+
+ $('.fas .fa-times').click(function(){
+   $('.overlay').hide();
+ });
+
+
+
+ $('.btn-quote').click(function(){
+   $('.overlay').show();
+   $('.btn-quote').hide();
+
+ });
+
+$( "#contact" ).submit(function( event ) {
+  $(this).hide();
+  $('.overlay').append($('<h2>').text('Thank You!')
+  );
+  setTimeout(function(){
+    $('.overlay').hide();
+ 
+}, 2000)
+  event.preventDefault();
+});
+
+
