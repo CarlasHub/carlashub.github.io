@@ -7,62 +7,57 @@ author: Henry Ford
 {% include quote.html quote=page.quote author=page.author %}
 
 <div class="container about_section">
-  <div class="row">
-    <img src="/assets/images/profilepic2.jpg" class="col m2 s3 responsive circle about_img" alt="me">
-    <div class="about_paragraph">
-      <p>
-      Someone who believes in the power of well-thought interfaces, in researching, and in a better understanding of the user experience.</p>
-      <p>
-      I believe in testing ideas, and developing solutions.
-      I believe there is always a solution.
-      Finally, I truly believe in the cliche that a better web will make a better world! 
-      </p>
-      <p>
-        I am now looking for my next adventure, so feel free to browse the <a class="about_me_links" href="/projects">projects</a> 
-        section, read the <a class="about_me_links" href="/blog">blog</a>  or <a class="about_me_links" href="/contact">shoot me an email  </a> and connect on <a class="about_me_links" href="https://www.linkedin.com/in/carla-goncalves-9a01a5164/">linkedIn</a>.
-      </p>
-    </div>
-  </div>
-  <h3 class="heading skills_heading center-align">Knowledge of :</h3>
-  <div class="skills_wrapper">
-      {% for tech_group in site.data.skills %}
-        <div class="skill_group">
-          <div class="col m4 s6">
-            <h4 class="heading">{{tech_group.name}}:</h4>
-            <div class="skills">
-              {% for tech in tech_group.skills %}
-              <i class="about_skill_icon devicon-{{tech.class}}"></i><span class="skill_names">{{tech.skill_name}}</span><br/>
-              {% endfor %}
-            </div>
-          </div>
+    <div class="row">
+        <a href="https://carlashub.com/" class="blogTitle underline" style=" text-decoration:underline;"> <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="yellow" width="18px" height="18px" style="margin-right:10px;"><path d="M0 0h24v24H0z" fill="none"/><path  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" /></svg>Please, visit new Domain.</a>
+        <img src="/assets/images/profilepic2.jpg" class="col m2 s3 responsive circle about_img" alt="me">
+        <div class="about_paragraph">
+            <p>
+                Someone who believes in the power of well-thought interfaces, in researching, and in a better understanding of the user experience.</p>
+            <p>
+                I believe in testing ideas, and developing solutions. I believe there is always a solution. Finally, I truly believe in the cliche that a better web will make a better world!
+            </p>
+            <p>
+                I am now looking for my next adventure, so feel free to browse the <a class="about_me_links" href="/projects">projects</a> section, read the <a class="about_me_links" href="/blog">blog</a> or <a class="about_me_links" href="/contact">shoot me an email  </a>                and connect on <a class="about_me_links" href="https://www.linkedin.com/in/carla-goncalves-9a01a5164/">linkedIn</a>.
+            </p>
         </div>
-      {% endfor %}
+    </div>
+    <h3 class="heading skills_heading center-align">Knowledge of :</h3>
+    <div class="skills_wrapper">
+        {% for tech_group in site.data.skills %}
+        <div class="skill_group">
+            <div class="col m4 s6">
+                <h4 class="heading">{{tech_group.name}}:</h4>
+                <div class="skills">
+                    {% for tech in tech_group.skills %}
+                    <i class="about_skill_icon devicon-{{tech.class}}"></i><span class="skill_names">{{tech.skill_name}}</span><br/> {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
 
 
-     
+
 
         <div class="blogReadMoreWrapper text-center">
 
-          <h5 class="readMoreCTA heading">You might want to read... </h5>
+            <h5 class="readMoreCTA heading">You might want to read... </h5>
 
-          {% for post in site.posts limit: 3 %}
+            {% for post in site.posts limit: 3 %}
 
             <div class="blogPostContainer">
-              <!-- <a href="{{post.url}}" class="blogPostFeaturedImg" style="background-image: url('{{site.baseurl}}{{post.featImage }}');"></a> -->
-              <a href="" class="blogCategory">{{post.categories}}</a>
+                <!-- <a href="{{post.url}}" class="blogPostFeaturedImg" style="background-image: url('{{site.baseurl}}{{post.featImage }}');"></a> -->
+                <a href="" class="blogCategory">{{post.categories}}</a>
 
-              <a href="{{post.url}}" class="blogTitle">{{post.title}}</a>
+                <a href="{{post.url}}" class="blogTitle">{{post.title}}</a>
 
-              <p class="blogExcerpt">{{post.excerpt}}...</p>
+                <p class="blogExcerpt">{{post.excerpt}}...</p>
             </div>
-            
 
-          {% endfor %}
-          
+
+            {% endfor %}
+
         </div>
 
-<!-- end skills wrapper -->
-  </div>
+        <!-- end skills wrapper -->
+    </div>
 </div>
-
-
