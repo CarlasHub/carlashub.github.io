@@ -6,6 +6,9 @@
 
 
 .about_section {
+  position: relative;
+  z-index: 1;
+
   .skills_wrapper {
     display: flex;
     flex-direction: row;
@@ -17,6 +20,168 @@
   .skill_group {
     width: 30%;
   }
+}
+
+// Universe theme for the About page
+body {
+  background:
+    radial-gradient(1200px 600px at 20% -10%, rgba(68, 94, 210, 0.35), transparent 60%),
+    radial-gradient(900px 500px at 85% 10%, rgba(177, 86, 255, 0.25), transparent 60%),
+    radial-gradient(700px 600px at 50% 120%, rgba(10, 160, 178, 0.22), transparent 55%),
+    linear-gradient(180deg, #050610 0%, #070a1f 45%, #0b1230 100%);
+  overflow-x: hidden;
+  color: #e8f2ff;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::before {
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,0.9), transparent 60%),
+    radial-gradient(1px 1px at 80% 20%, rgba(255,255,255,0.8), transparent 60%),
+    radial-gradient(1px 1px at 40% 80%, rgba(255,255,255,0.7), transparent 60%),
+    radial-gradient(2px 2px at 70% 70%, rgba(255,255,255,0.85), transparent 60%),
+    radial-gradient(1px 1px at 10% 60%, rgba(255,255,255,0.6), transparent 60%),
+    radial-gradient(1px 1px at 90% 90%, rgba(255,255,255,0.75), transparent 60%),
+    radial-gradient(1px 1px at 55% 15%, rgba(255,255,255,0.9), transparent 60%),
+    radial-gradient(2px 2px at 30% 50%, rgba(255,255,255,0.8), transparent 60%);
+  opacity: 0.9;
+  animation: twinkle 6s ease-in-out infinite;
+}
+
+body::after {
+  background-image:
+    radial-gradient(1px 1px at 15% 25%, rgba(255,255,255,0.7), transparent 60%),
+    radial-gradient(1px 1px at 65% 35%, rgba(255,255,255,0.5), transparent 60%),
+    radial-gradient(2px 2px at 35% 15%, rgba(255,255,255,0.8), transparent 60%),
+    radial-gradient(1px 1px at 75% 55%, rgba(255,255,255,0.6), transparent 60%),
+    radial-gradient(1px 1px at 45% 65%, rgba(255,255,255,0.7), transparent 60%);
+  opacity: 0.6;
+  animation: drift 80s linear infinite;
+  transform: translate3d(0, 0, 0);
+}
+
+.my_container {
+  position: relative;
+  z-index: 1;
+}
+
+.about_section::before {
+  content: "";
+  position: absolute;
+  inset: -40px -20px -60px -20px;
+  background:
+    radial-gradient(800px 400px at 10% 0%, rgba(82, 143, 255, 0.16), transparent 70%),
+    radial-gradient(600px 300px at 90% 10%, rgba(222, 140, 255, 0.12), transparent 70%),
+    radial-gradient(500px 500px at 50% 100%, rgba(60, 220, 210, 0.12), transparent 70%);
+  filter: blur(6px);
+  opacity: 0.9;
+  z-index: -1;
+}
+
+.about_section::after {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  right: -40px;
+  top: 20px;
+  border-radius: 50%;
+  background:
+    conic-gradient(from 0deg,
+      rgba(232, 242, 255, 0.8) 0deg 4deg,
+      transparent 4deg 20deg,
+      rgba(120, 180, 255, 0.7) 20deg 24deg,
+      transparent 24deg 40deg,
+      rgba(255, 220, 120, 0.7) 40deg 44deg,
+      transparent 44deg 60deg,
+      rgba(232, 242, 255, 0.8) 60deg 64deg,
+      transparent 64deg 80deg,
+      rgba(120, 180, 255, 0.7) 80deg 84deg,
+      transparent 84deg 100deg,
+      rgba(255, 220, 120, 0.7) 100deg 104deg,
+      transparent 104deg 120deg,
+      rgba(232, 242, 255, 0.8) 120deg 124deg,
+      transparent 124deg 140deg,
+      rgba(120, 180, 255, 0.7) 140deg 144deg,
+      transparent 144deg 160deg,
+      rgba(255, 220, 120, 0.7) 160deg 164deg,
+      transparent 164deg 180deg,
+      rgba(232, 242, 255, 0.8) 180deg 184deg,
+      transparent 184deg 200deg,
+      rgba(120, 180, 255, 0.7) 200deg 204deg,
+      transparent 204deg 220deg,
+      rgba(255, 220, 120, 0.7) 220deg 224deg,
+      transparent 224deg 240deg,
+      rgba(232, 242, 255, 0.8) 240deg 244deg,
+      transparent 244deg 260deg,
+      rgba(120, 180, 255, 0.7) 260deg 264deg,
+      transparent 264deg 280deg,
+      rgba(255, 220, 120, 0.7) 280deg 284deg,
+      transparent 284deg 300deg,
+      rgba(232, 242, 255, 0.8) 300deg 304deg,
+      transparent 304deg 320deg,
+      rgba(120, 180, 255, 0.7) 320deg 324deg,
+      transparent 324deg 340deg,
+      rgba(255, 220, 120, 0.7) 340deg 344deg,
+      transparent 344deg 360deg);
+  border: 1px solid rgba(232, 242, 255, 0.5);
+  box-shadow:
+    0 0 30px rgba(120, 180, 255, 0.3),
+    0 0 80px rgba(120, 180, 255, 0.2);
+  opacity: 0.85;
+  mix-blend-mode: screen;
+  animation: compass-glow 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.about_section .heading {
+  text-shadow: 0 0 12px rgba(120, 180, 255, 0.5);
+}
+
+.about_paragraph {
+  color: #e8f2ff;
+  opacity: 0.9;
+  text-shadow: 0 0 16px rgba(60, 140, 255, 0.25);
+}
+
+.quote {
+  color: #ffe9a8;
+  text-shadow: 0 0 18px rgba(255, 220, 120, 0.4);
+}
+
+.author {
+  color: #ffe9a8;
+}
+
+.about_me_links {
+  color: #9ed6ff;
+}
+
+.about_me_links:hover {
+  color: #d3f1ff;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.75; }
+  50% { opacity: 1; }
+}
+
+@keyframes drift {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-2%, -2%, 0); }
+}
+
+@keyframes compass-glow {
+  0%, 100% { opacity: 0.75; transform: scale(1); }
+  50% { opacity: 0.95; transform: scale(1.02); }
 }
 
 .my_footer {
@@ -38,7 +203,6 @@ div.row.resume-wrapper {
  text-align: center!important; 
 }
 body {
-  background-color: $background-color;
   min-height: 100%;
   min-width: 300px;
 }
@@ -446,8 +610,8 @@ button.fill:hover:before {
 .about_img {
   margin-top: 15px;
   margin-right: 15px;
-  //-webkit-filter: sepia(14);
- // filter: sepia(14);
+  border: 2px solid rgba(232, 242, 255, 0.6);
+  box-shadow: 0 0 20px rgba(120, 180, 255, 0.35);
 }
 
 .about_paragraph {
@@ -546,5 +710,12 @@ nav a.button-collapse i {
     .skill_group {
       width: 50%;
     }
+  }
+
+  .about_section::after {
+    width: 220px;
+    height: 220px;
+    right: -20px;
+    top: 10px;
   }
 }
