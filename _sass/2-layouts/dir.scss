@@ -93,10 +93,10 @@ body::after {
 
 .astronaut {
   position: fixed;
-  left: -10rem;
-  top: 40%;
-  width: 14rem;
-  height: 14rem;
+  left: -6rem;
+  top: 45%;
+  width: 7.5rem;
+  height: 7.5rem;
   z-index: 2;
   opacity: 0;
   animation: astronaut-float 36s ease-in-out infinite;
@@ -928,9 +928,9 @@ nav a.button-collapse i {
   }
 
   .astronaut {
-    width: 10rem;
-    height: 10rem;
-    left: -9rem;
+    width: 6rem;
+    height: 6rem;
+    left: -5.5rem;
     top: 55%;
   }
 }

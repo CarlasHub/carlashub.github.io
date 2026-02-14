@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <clipPath id="helmet-clip">
+      <circle cx="100" cy="70" r="34"/>
+    </clipPath>
+  </defs>
+  <g>
+    <circle cx="100" cy="70" r="42" fill="#f7f8fb" stroke="#d7e2f2" stroke-width="5"/>
+    <circle cx="100" cy="70" r="36" fill="#1b2233" opacity="0.22"/>
+    <image href="/assets/images/profilepic2.jpg" x="66" y="36" width="68" height="68" clip-path="url(#helmet-clip)" preserveAspectRatio="xMidYMid slice"/>
+    <circle cx="100" cy="70" r="34" fill="none" stroke="#b8c9ea" stroke-width="3"/>
+
+    <rect x="76" y="106" width="48" height="52" rx="14" fill="#f4f6fa" stroke="#cbd7eb" stroke-width="4"/>
+    <rect x="84" y="120" width="32" height="12" rx="5" fill="#b7c7e6"/>
+    <rect x="58" y="118" width="20" height="10" rx="5" fill="#e6edf7"/>
+    <rect x="122" y="118" width="20" height="10" rx="5" fill="#e6edf7"/>
+    <circle cx="100" cy="146" r="5" fill="#c0cde6"/>
+
+    <rect x="86" y="158" width="14" height="20" rx="6" fill="#e9eff9"/>
+    <rect x="102" y="158" width="14" height="20" rx="6" fill="#e9eff9"/>
+
+    <g transform="translate(140 96)">
+      <rect x="0" y="0" width="5" height="62" rx="2.5" fill="#e7d1a7"/>
+      <path d="M5 6 L32 10 L28 22 L32 34 L5 38 Z" fill="#f3c47c" stroke="#d4a25c" stroke-width="2"/>
+    </g>
+  </g>
+</svg>
