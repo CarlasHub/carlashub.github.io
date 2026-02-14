@@ -70,7 +70,7 @@ author: Henry Ford
         <span></span>
     </div>
 </div>
-<button class="motion-toggle" type="button" aria-pressed="false" aria-label="Pause animations">❚❚</button>
+<button class="motion-toggle" type="button" aria-pressed="false">Pause animations</button>
 
 <div class="container about_section">
     <div class="row">
@@ -294,8 +294,7 @@ author: Henry Ford
       document.body.classList.toggle("motion-paused", paused);
       if (toggle) {
         toggle.setAttribute("aria-pressed", paused ? "true" : "false");
-        toggle.textContent = paused ? "▶" : "❚❚";
-        toggle.setAttribute("aria-label", paused ? "Play animations" : "Pause animations");
+        toggle.textContent = paused ? "Play animations" : "Pause animations";
       }
       try {
         localStorage.setItem(motionKey, paused ? "1" : "0");
