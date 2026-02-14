@@ -37,7 +37,30 @@ author: Henry Ford
         </div>
     </div>
     <div class="astronaut" aria-hidden="true">
-        <img class="astronaut-svg" src="/assets/images/astronaut-colored.svg" alt="">
+        <svg class="astronaut-svg" viewBox="0 0 200 200" role="img" aria-hidden="true">
+            <defs>
+                <clipPath id="helmet-clip">
+                    <circle cx="100" cy="70" r="34"></circle>
+                </clipPath>
+            </defs>
+            <g>
+                <circle cx="100" cy="70" r="42" fill="#f7f8fb" stroke="#d7e2f2" stroke-width="5"></circle>
+                <circle cx="100" cy="70" r="36" fill="#1b2233" opacity="0.22"></circle>
+                <image href="/assets/images/profilepic2.jpg" x="66" y="36" width="68" height="68" clip-path="url(#helmet-clip)" preserveAspectRatio="xMidYMid slice"></image>
+                <circle cx="100" cy="70" r="34" fill="none" stroke="#b8c9ea" stroke-width="3"></circle>
+                <rect x="76" y="106" width="48" height="52" rx="14" fill="#f4f6fa" stroke="#cbd7eb" stroke-width="4"></rect>
+                <rect x="84" y="120" width="32" height="12" rx="5" fill="#b7c7e6"></rect>
+                <rect x="58" y="118" width="20" height="10" rx="5" fill="#e6edf7"></rect>
+                <rect x="122" y="118" width="20" height="10" rx="5" fill="#e6edf7"></rect>
+                <circle cx="100" cy="146" r="5" fill="#c0cde6"></circle>
+                <rect x="86" y="158" width="14" height="20" rx="6" fill="#e9eff9"></rect>
+                <rect x="102" y="158" width="14" height="20" rx="6" fill="#e9eff9"></rect>
+                <g transform="translate(140 96)">
+                    <rect x="0" y="0" width="5" height="62" rx="2.5" fill="#e7d1a7"></rect>
+                    <path d="M5 6 L32 10 L28 22 L32 34 L5 38 Z" fill="#f3c47c" stroke="#d4a25c" stroke-width="2"></path>
+                </g>
+            </g>
+        </svg>
     </div>
     <div class="shooting-stars" aria-hidden="true">
         <span></span>
@@ -47,7 +70,7 @@ author: Henry Ford
         <span></span>
     </div>
 </div>
-<button class="motion-toggle" type="button" aria-pressed="false">Pause animations</button>
+<button class="motion-toggle" type="button" aria-pressed="false" aria-label="Pause animations">❚❚</button>
 
 <div class="container about_section">
     <div class="row">
@@ -94,6 +117,7 @@ author: Henry Ford
     var svg = compass.querySelector(".compass-svg");
     var toggle = document.querySelector(".motion-toggle");
     var quote = document.querySelector(".quote");
+    var stars = document.querySelectorAll(".shooting-stars span");
     var jokes = [
       "There are only 10 types of people: those who understand binary and those who don’t.",
       "I would tell you a UDP joke, but you might not get it.",
@@ -203,6 +227,32 @@ author: Henry Ford
       }
     }
 
+    function randomizeStar(star) {
+      if (!star) return;
+      var startX = Math.random() * 120 - 10;
+      var startY = Math.random() * 85 + 5;
+      var dx = Math.random() * 60 + 30;
+      var dy = Math.random() * 40 + 10;
+      var duration = Math.random() * 8 + 12;
+      var delay = Math.random() * 6 + 1;
+      star.style.left = startX.toFixed(2) + "vw";
+      star.style.top = startY.toFixed(2) + "vh";
+      star.style.setProperty("--shoot-x", dx.toFixed(2) + "vw");
+      star.style.setProperty("--shoot-y", dy.toFixed(2) + "vh");
+      star.style.setProperty("--shoot-duration", duration.toFixed(2) + "s");
+      star.style.setProperty("--shoot-delay", delay.toFixed(2) + "s");
+    }
+
+    function initShootingStars() {
+      if (!stars || !stars.length) return;
+      stars.forEach(function (star) {
+        randomizeStar(star);
+        star.addEventListener("animationiteration", function () {
+          randomizeStar(star);
+        });
+      });
+    }
+
     function spinCompass() {
       if (!svg) return;
       if (isMotionDisabled()) {
@@ -244,7 +294,8 @@ author: Henry Ford
       document.body.classList.toggle("motion-paused", paused);
       if (toggle) {
         toggle.setAttribute("aria-pressed", paused ? "true" : "false");
-        toggle.textContent = paused ? "Play animations" : "Pause animations";
+        toggle.textContent = paused ? "▶" : "❚❚";
+        toggle.setAttribute("aria-label", paused ? "Play animations" : "Pause animations");
       }
       try {
         localStorage.setItem(motionKey, paused ? "1" : "0");
@@ -272,6 +323,7 @@ author: Henry Ford
     }
 
     setupQuote();
+    initShootingStars();
     initMotionPreference();
   })();
 </script>
