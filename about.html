@@ -8,11 +8,29 @@ author: Henry Ford
 
 <div class="cosmos-decor">
     <div class="compass-widget" role="button" tabindex="0" aria-label="Compass">
-        <div class="compass-face">
-            <div class="needle"></div>
-            <div class="pivot"></div>
-            <div class="compass-glass"></div>
-        </div>
+        <svg class="compass-svg" viewBox="0 0 200 200" aria-hidden="true">
+            <circle cx="100" cy="100" r="96" fill="#f3e6c5" stroke="#3f2a16" stroke-width="4"></circle>
+            <circle cx="100" cy="100" r="78" fill="#f7ecd2" stroke="#3f2a16" stroke-width="3"></circle>
+            <circle cx="100" cy="100" r="60" fill="#f5e7c7" stroke="#3f2a16" stroke-width="2"></circle>
+            <g fill="#3f2a16">
+                <polygon points="100,18 112,78 100,88 88,78"></polygon>
+                <polygon points="182,100 122,112 112,100 122,88"></polygon>
+                <polygon points="100,182 112,122 100,112 88,122"></polygon>
+                <polygon points="18,100 78,112 88,100 78,88"></polygon>
+            </g>
+            <g fill="#6a4a26">
+                <polygon points="100,30 116,86 100,96 84,86"></polygon>
+                <polygon points="170,100 114,116 104,100 114,84"></polygon>
+                <polygon points="100,170 116,114 100,104 84,114"></polygon>
+                <polygon points="30,100 86,116 96,100 86,84"></polygon>
+            </g>
+            <circle cx="100" cy="100" r="8" fill="#3f2a16"></circle>
+            <circle cx="100" cy="100" r="4" fill="#f7f0dc"></circle>
+            <text x="100" y="26" text-anchor="middle" font-size="14" font-family="serif" fill="#3f2a16">N</text>
+            <text x="174" y="104" text-anchor="middle" font-size="14" font-family="serif" fill="#3f2a16">E</text>
+            <text x="100" y="184" text-anchor="middle" font-size="14" font-family="serif" fill="#3f2a16">S</text>
+            <text x="26" y="104" text-anchor="middle" font-size="14" font-family="serif" fill="#3f2a16">W</text>
+        </svg>
         <div class="compass-tooltip" aria-live="polite"></div>
     </div>
     <div class="shooting-stars" aria-hidden="true">
@@ -30,12 +48,12 @@ author: Henry Ford
         <img src="/assets/images/profilepic2.jpg" class="col m2 s3 responsive circle about_img" alt="me">
         <div class="about_paragraph">
             <p>
-                Someone who believes in the power of well-thought interfaces, in researching, and in a better understanding of the user experience.</p>
+                Front end and accessibility specialist working across design systems, interface architecture, and tooling.</p>
             <p>
-                I believe in testing ideas, and developing solutions. I believe there is always a solution. Finally, I truly believe in the cliche that a better web will make a better world!
+                I help to maintain scalable component systems, audit and remediate accessibility issues, and build internal tools that improve developer and QA workflows.
             </p>
             <p>
-                I am now looking for my next adventure, so feel free to connect on <a class="about_me_links" href="https://www.linkedin.com/in/carla-goncalves-9a01a5164/">linkedIn</a>.
+                I value semantic structure, resilient interfaces, and solutions that remain usable and maintainable over time.
             </p>
         </div>
     </div>
@@ -66,6 +84,7 @@ author: Henry Ford
     if (!compass) return;
 
     var tooltip = compass.querySelector(".compass-tooltip");
+    var svg = compass.querySelector(".compass-svg");
     var jokes = [
       "There are only 10 types of people: those who understand binary and those who don’t.",
       "I would tell you a UDP joke, but you might not get it.",
@@ -79,6 +98,7 @@ author: Henry Ford
       "I told my computer I needed a break, and it said: No problem — I’ll go to sleep."
     ];
     var lastIndex = -1;
+    var isSpinning = false;
 
     function nextJoke() {
       var i = Math.floor(Math.random() * jokes.length);
@@ -97,12 +117,27 @@ author: Henry Ford
       }, 2600);
     }
 
-    compass.addEventListener("click", showJoke);
+    function spinCompass() {
+      if (isSpinning || !svg) return;
+      isSpinning = true;
+      svg.classList.remove("spinning");
+      void svg.offsetWidth;
+      svg.classList.add("spinning");
+    }
+
+    compass.addEventListener("click", spinCompass);
     compass.addEventListener("keydown", function (event) {
       if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
-        showJoke();
+        spinCompass();
       }
     });
+
+    if (svg) {
+      svg.addEventListener("animationend", function () {
+        isSpinning = false;
+        showJoke();
+      });
+    }
   })();
 </script>

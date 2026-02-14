@@ -25,9 +25,9 @@
 // Universe theme for the About page
 body {
   background:
-    radial-gradient(900px 500px at 58% 38%, rgba(136, 110, 255, 0.55), rgba(10, 6, 24, 0) 60%),
-    radial-gradient(700px 450px at 38% 48%, rgba(78, 120, 255, 0.35), rgba(8, 6, 18, 0) 62%),
-    radial-gradient(500px 380px at 66% 56%, rgba(185, 115, 255, 0.25), rgba(8, 6, 18, 0) 65%),
+    radial-gradient(900px 520px at 58% 38%, rgba(70, 120, 220, 0.45), rgba(10, 6, 24, 0) 62%),
+    radial-gradient(700px 460px at 38% 48%, rgba(50, 100, 210, 0.3), rgba(8, 6, 18, 0) 64%),
+    radial-gradient(520px 400px at 66% 56%, rgba(40, 140, 200, 0.22), rgba(8, 6, 18, 0) 66%),
     linear-gradient(180deg, #04050c 0%, #05070f 60%, #04060e 100%);
   overflow-x: hidden;
   color: #e8f2ff;
@@ -86,8 +86,8 @@ body::after {
   position: absolute;
   inset: -40px -20px -60px -20px;
   background:
-    radial-gradient(900px 420px at 30% 0%, rgba(120, 110, 255, 0.18), transparent 70%),
-    radial-gradient(700px 360px at 80% 12%, rgba(190, 120, 255, 0.16), transparent 70%),
+    radial-gradient(900px 420px at 30% 0%, rgba(90, 140, 230, 0.16), transparent 70%),
+    radial-gradient(700px 360px at 80% 12%, rgba(80, 170, 220, 0.14), transparent 70%),
     radial-gradient(520px 520px at 50% 100%, rgba(60, 200, 210, 0.12), transparent 70%);
   filter: blur(6px);
   opacity: 0.9;
@@ -106,19 +106,12 @@ body::after {
   top: 24px;
   right: 24px;
   z-index: 4;
-  width: 72px;
-  height: 72px;
+  width: 92px;
+  height: 92px;
   border-radius: 50%;
-  background:
-    radial-gradient(circle at 50% 50%, rgba(255, 240, 200, 0.12), transparent 55%),
-    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2), transparent 50%),
-    radial-gradient(circle at 70% 70%, rgba(120, 90, 40, 0.25), transparent 55%),
-    linear-gradient(180deg, rgba(60, 40, 10, 0.9), rgba(20, 12, 6, 0.95));
-  border: 1px solid rgba(222, 190, 130, 0.7);
-  box-shadow:
-    0 0 10px rgba(255, 220, 150, 0.3),
-    inset 0 0 18px rgba(80, 50, 20, 0.8);
-  backdrop-filter: blur(2px);
+  background: rgba(250, 240, 214, 0.05);
+  border: 1px solid rgba(210, 180, 120, 0.55);
+  box-shadow: 0 0 12px rgba(255, 220, 150, 0.2);
   pointer-events: auto;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -131,101 +124,20 @@ body::after {
     inset 0 0 20px rgba(100, 70, 30, 0.9);
 }
 
-.compass-widget::before {
-  content: "N";
-  position: absolute;
-  top: 7px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 11px;
-  letter-spacing: 1px;
-  color: rgba(255, 245, 220, 0.95);
-  text-shadow: 0 0 6px rgba(255, 220, 150, 0.8);
-}
-
-.compass-face {
-  position: absolute;
-  inset: 7px;
-  border-radius: 50%;
-  background:
-    radial-gradient(circle at 50% 50%, rgba(255, 245, 220, 0.35), transparent 58%),
-    repeating-radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.08) 0 2px, transparent 2px 6px),
-    radial-gradient(circle at 50% 50%, rgba(20, 12, 6, 0.9), rgba(10, 6, 4, 0.95));
-  border: 1px solid rgba(210, 180, 120, 0.6);
-  box-shadow: inset 0 0 14px rgba(70, 40, 15, 0.9);
-}
-
-.compass-face::before,
-.compass-face::after {
-  content: "";
-  position: absolute;
-  inset: 12px;
-  border-radius: 50%;
-  border: 1px dashed rgba(230, 210, 170, 0.45);
-}
-
-.compass-face::after {
-  inset: 20px;
-  border-style: solid;
-  border-color: rgba(230, 210, 170, 0.2);
-}
-
-.compass-widget .needle {
-  position: absolute;
-  inset: 12px;
-  z-index: 2;
+.compass-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
   border-radius: 50%;
 }
 
-.compass-widget .needle::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 8px;
-  width: 2px;
-  height: 22px;
-  background: linear-gradient(180deg, #ff7d6a, rgba(255, 255, 255, 0));
-  transform: translateX(-50%);
-  box-shadow: 0 0 6px rgba(255, 120, 120, 0.8);
-}
-
-.compass-widget .needle::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 8px;
-  width: 2px;
-  height: 18px;
-  background: linear-gradient(0deg, rgba(140, 200, 255, 0.8), rgba(255, 255, 255, 0));
-  transform: translateX(-50%);
-  box-shadow: 0 0 6px rgba(120, 190, 255, 0.7);
-}
-
-.compass-widget .pivot {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background: rgba(255, 245, 220, 0.95);
-  box-shadow: 0 0 8px rgba(255, 210, 140, 0.9);
-  z-index: 3;
-}
-
-.compass-glass {
-  position: absolute;
-  inset: 2px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0) 55%);
-  pointer-events: none;
-  z-index: 4;
+.compass-svg.spinning {
+  animation: compass-spin 1.8s ease-in-out;
 }
 
 .compass-tooltip {
   position: absolute;
-  top: 78px;
+  top: 98px;
   right: 0;
   width: 220px;
   padding: 8px 10px;
@@ -255,39 +167,40 @@ body::after {
 
 .shooting-stars span {
   position: absolute;
-  width: 180px;
-  height: 2px;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(200, 220, 255, 0.9), rgba(255, 255, 255, 0));
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(220, 235, 255, 0.9);
   opacity: 0;
-  filter: drop-shadow(0 0 8px rgba(140, 190, 255, 0.9));
+  box-shadow: 0 0 6px rgba(160, 210, 255, 0.8);
   transform: rotate(-20deg);
-  animation: shoot 14s linear infinite;
+  animation: shoot 16s linear infinite;
 }
 
 .shooting-stars span:nth-child(1) {
-  top: 15%;
+  top: 18%;
   left: -10%;
-  animation-delay: 2s;
+  animation-delay: 3s;
 }
 .shooting-stars span:nth-child(2) {
-  top: 32%;
+  top: 35%;
   left: -20%;
-  animation-delay: 7s;
+  animation-delay: 9s;
 }
 .shooting-stars span:nth-child(3) {
-  top: 50%;
+  top: 52%;
   left: -15%;
-  animation-delay: 12s;
+  animation-delay: 14s;
 }
 .shooting-stars span:nth-child(4) {
-  top: 70%;
+  top: 72%;
   left: -25%;
-  animation-delay: 18s;
+  animation-delay: 20s;
 }
 .shooting-stars span:nth-child(5) {
-  top: 85%;
+  top: 88%;
   left: -30%;
-  animation-delay: 24s;
+  animation-delay: 26s;
 }
 
 .about_section .heading {
@@ -329,9 +242,14 @@ body::after {
 
 @keyframes shoot {
   0% { opacity: 0; transform: translate3d(0, 0, 0) rotate(-20deg); }
-  6% { opacity: 1; }
-  12% { opacity: 0; transform: translate3d(900px, 450px, 0) rotate(-20deg); }
+  8% { opacity: 1; }
+  16% { opacity: 0; transform: translate3d(900px, 450px, 0) rotate(-20deg); }
   100% { opacity: 0; transform: translate3d(900px, 450px, 0) rotate(-20deg); }
+}
+
+@keyframes compass-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .my_footer {
@@ -865,8 +783,8 @@ nav a.button-collapse i {
   .compass-widget {
     top: 16px;
     right: 16px;
-    width: 56px;
-    height: 56px;
+    width: 70px;
+    height: 70px;
   }
 
   .compass-tooltip {
