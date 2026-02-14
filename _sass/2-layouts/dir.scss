@@ -418,6 +418,17 @@ nav ul li {
   background-color: transparent !important;
 }
 
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-links li {
+  float: none;
+}
+
 .nav-underline {
   margin: 0 25px 0 25px;
   width: 0%;
@@ -928,5 +939,17 @@ nav a.button-collapse i {
     height: 6rem;
     left: -5.5rem;
     top: 55%;
+  }
+
+  nav .nav-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: flex-start;
   }
 }

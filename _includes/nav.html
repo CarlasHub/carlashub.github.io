@@ -1,7 +1,7 @@
 <nav class="z-depth-0 transparent">
   <div class="nav-wrapper transparent s12">
     <a href="/" class="brand-logo"><img src="/assets/images/logo.png"  style="max-width: 58px; max-height:58px;"alt="website logo" /></a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
+    <ul id="nav-mobile" class="right nav-links">
       {% for my_section in site.data.sections %}
         <li><a href={{my_section[1].url}} class="">{{my_section[0]}}</a><div class="nav-underline"></div></li>
       {% endfor %}
