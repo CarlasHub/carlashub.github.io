@@ -17,7 +17,7 @@ author: Henry Ford
                 I believe in testing ideas, and developing solutions. I believe there is always a solution. Finally, I truly believe in the cliche that a better web will make a better world!
             </p>
             <p>
-                I am now looking for my next adventure, so feel free to browse the <a class="about_me_links" href="/projects">projects</a> section, read the <a class="about_me_links" href="/blog">blog</a> or <a class="about_me_links" href="/contact">shoot me an email  </a>                and connect on <a class="about_me_links" href="https://www.linkedin.com/in/carla-goncalves-9a01a5164/">linkedIn</a>.
+                I am now looking for my next adventure, so feel free to connect on <a class="about_me_links" href="https://www.linkedin.com/in/carla-goncalves-9a01a5164/">linkedIn</a>.
             </p>
         </div>
     </div>
@@ -37,26 +37,6 @@ author: Henry Ford
 
 
 
-
-        <div class="blogReadMoreWrapper text-center">
-
-            <h5 class="readMoreCTA heading">You might want to read... </h5>
-
-            {% for post in site.posts limit: 3 %}
-
-            <div class="blogPostContainer">
-                <!-- <a href="{{post.url}}" class="blogPostFeaturedImg" style="background-image: url('{{site.baseurl}}{{post.featImage }}');"></a> -->
-                <a href="" class="blogCategory">{{post.categories}}</a>
-
-                <a href="{{post.url}}" class="blogTitle">{{post.title}}</a>
-
-                <p class="blogExcerpt">{{post.excerpt}}...</p>
-            </div>
-
-
-            {% endfor %}
-
-        </div>
 
         <!-- end skills wrapper -->
     </div>
