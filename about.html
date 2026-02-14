@@ -31,7 +31,20 @@ author: Henry Ford
             <text x="100" y="184" text-anchor="middle" font-size="14" font-family="serif" fill="#3f2a16">S</text>
             <text x="26" y="104" text-anchor="middle" font-size="14" font-family="serif" fill="#3f2a16">W</text>
         </svg>
-        <div class="compass-tooltip" aria-live="polite"></div>
+        <div class="compass-tooltip" role="dialog" aria-live="polite" aria-hidden="true">
+            <p class="compass-message"></p>
+            <button type="button" class="compass-dismiss" aria-label="Dismiss joke">Dismiss</button>
+        </div>
+    </div>
+    <div class="astronaut" aria-hidden="true">
+        <div class="astronaut-helmet">
+            <img src="/assets/images/profilepic2.jpg" alt="" class="astronaut-face">
+        </div>
+        <div class="astronaut-body"></div>
+        <div class="astronaut-flag">
+            <span class="flag-pole"></span>
+            <span class="flag-fabric"></span>
+        </div>
     </div>
     <div class="shooting-stars" aria-hidden="true">
         <span></span>
@@ -41,6 +54,7 @@ author: Henry Ford
         <span></span>
     </div>
 </div>
+<button class="motion-toggle" type="button" aria-pressed="false">Pause animations</button>
 
 <div class="container about_section">
     <div class="row">
@@ -57,7 +71,7 @@ author: Henry Ford
             </p>
         </div>
     </div>
-    <h3 class="heading skills_heading center-align">Knowledge of :</h3>
+    <h3 class="heading skills_heading center-align" id="projects-tools">Knowledge of :</h3>
     <div class="skills_wrapper">
         {% for tech_group in site.data.skills %}
         <div class="skill_group">
@@ -84,7 +98,10 @@ author: Henry Ford
     if (!compass) return;
 
     var tooltip = compass.querySelector(".compass-tooltip");
+    var tooltipMessage = compass.querySelector(".compass-message");
+    var tooltipDismiss = compass.querySelector(".compass-dismiss");
     var svg = compass.querySelector(".compass-svg");
+    var toggle = document.querySelector(".motion-toggle");
     var jokes = [
       "There are only 10 types of people: those who understand binary and those who don’t.",
       "I would tell you a UDP joke, but you might not get it.",
@@ -98,7 +115,8 @@ author: Henry Ford
       "I told my computer I needed a break, and it said: No problem — I’ll go to sleep."
     ];
     var lastIndex = -1;
-    var isSpinning = false;
+    var pendingSpin = false;
+    var motionKey = "about_motion_paused";
 
     function nextJoke() {
       var i = Math.floor(Math.random() * jokes.length);
@@ -108,18 +126,31 @@ author: Henry Ford
     }
 
     function showJoke() {
-      if (!tooltip) return;
-      tooltip.textContent = nextJoke();
+      if (!tooltip || !tooltipMessage) return;
+      tooltipMessage.textContent = nextJoke();
       tooltip.classList.add("visible");
-      clearTimeout(tooltip._hideTimer);
-      tooltip._hideTimer = setTimeout(function () {
-        tooltip.classList.remove("visible");
-      }, 2600);
+      tooltip.setAttribute("aria-hidden", "false");
+    }
+
+    function hideJoke() {
+      if (!tooltip) return;
+      tooltip.classList.remove("visible");
+      tooltip.setAttribute("aria-hidden", "true");
+    }
+
+    function isMotionDisabled() {
+      if (document.body.classList.contains("motion-paused")) return true;
+      if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return true;
+      return false;
     }
 
     function spinCompass() {
-      if (isSpinning || !svg) return;
-      isSpinning = true;
+      if (!svg) return;
+      if (isMotionDisabled()) {
+        showJoke();
+        return;
+      }
+      pendingSpin = true;
       svg.classList.remove("spinning");
       void svg.offsetWidth;
       svg.classList.add("spinning");
@@ -135,9 +166,51 @@ author: Henry Ford
 
     if (svg) {
       svg.addEventListener("animationend", function () {
-        isSpinning = false;
+        if (!pendingSpin) return;
+        pendingSpin = false;
+        svg.classList.remove("spinning");
         showJoke();
       });
     }
+
+    if (tooltipDismiss) {
+      tooltipDismiss.addEventListener("click", hideJoke);
+    }
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") hideJoke();
+    });
+
+    function setMotionPaused(paused) {
+      document.body.classList.toggle("motion-paused", paused);
+      if (toggle) {
+        toggle.setAttribute("aria-pressed", paused ? "true" : "false");
+        toggle.textContent = paused ? "Play animations" : "Pause animations";
+      }
+      try {
+        localStorage.setItem(motionKey, paused ? "1" : "0");
+      } catch (e) {}
+    }
+
+    function initMotionPreference() {
+      var stored = null;
+      try {
+        stored = localStorage.getItem(motionKey);
+      } catch (e) {}
+      if (stored === "1") return setMotionPaused(true);
+      if (stored === "0") return setMotionPaused(false);
+      if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        return setMotionPaused(true);
+      }
+      setMotionPaused(false);
+    }
+
+    if (toggle) {
+      toggle.addEventListener("click", function () {
+        setMotionPaused(!document.body.classList.contains("motion-paused"));
+      });
+    }
+
+    initMotionPreference();
   })();
 </script>
