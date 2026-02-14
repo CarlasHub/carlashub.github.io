@@ -6,6 +6,24 @@ author: Henry Ford
 
 {% include quote.html quote=page.quote author=page.author %}
 
+<div class="cosmos-decor">
+    <div class="compass-widget" role="button" tabindex="0" aria-label="Compass">
+        <div class="compass-face">
+            <div class="needle"></div>
+            <div class="pivot"></div>
+            <div class="compass-glass"></div>
+        </div>
+        <div class="compass-tooltip" aria-live="polite"></div>
+    </div>
+    <div class="shooting-stars" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+
 <div class="container about_section">
     <div class="row">
         <a href="https://carlashub.com/" class="blogTitle underline" style=" text-decoration:underline;"> <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="yellow" width="18px" height="18px" style="margin-right:10px;"><path d="M0 0h24v24H0z" fill="none"/><path  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" /></svg>Please, visit new Domain.</a>
@@ -41,3 +59,50 @@ author: Henry Ford
         <!-- end skills wrapper -->
     </div>
 </div>
+
+<script>
+  (function () {
+    var compass = document.querySelector(".compass-widget");
+    if (!compass) return;
+
+    var tooltip = compass.querySelector(".compass-tooltip");
+    var jokes = [
+      "There are only 10 types of people: those who understand binary and those who don’t.",
+      "I would tell you a UDP joke, but you might not get it.",
+      "A SQL query walks into a bar and asks: Can I join you?",
+      "Why do programmers confuse Halloween and Christmas? Because OCT 31 == DEC 25.",
+      "It’s not a bug; it’s an undocumented feature.",
+      "I changed my password to incorrect. So whenever I forget, it reminds me.",
+      "To understand recursion, you must first understand recursion.",
+      "The cloud is just someone else’s computer.",
+      "There’s no place like 127.0.0.1.",
+      "I told my computer I needed a break, and it said: No problem — I’ll go to sleep."
+    ];
+    var lastIndex = -1;
+
+    function nextJoke() {
+      var i = Math.floor(Math.random() * jokes.length);
+      if (i === lastIndex) i = (i + 1) % jokes.length;
+      lastIndex = i;
+      return jokes[i];
+    }
+
+    function showJoke() {
+      if (!tooltip) return;
+      tooltip.textContent = nextJoke();
+      tooltip.classList.add("visible");
+      clearTimeout(tooltip._hideTimer);
+      tooltip._hideTimer = setTimeout(function () {
+        tooltip.classList.remove("visible");
+      }, 2600);
+    }
+
+    compass.addEventListener("click", showJoke);
+    compass.addEventListener("keydown", function (event) {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        showJoke();
+      }
+    });
+  })();
+</script>
